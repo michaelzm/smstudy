@@ -1,8 +1,8 @@
 <template>
   <div class="textField">
     <div class="informations">
-      <textarea placeholder="Frage" name="textQuestion" id="tq" />
-      <textarea placeholder="Antwort" name="textQuestion" id="ta" />
+      <textarea v-model="textquestion" placeholder="Frage" name="textQuestion" id="tq" />
+      <textarea v-model="textanswer" placeholder="Antwort" name="textQuestion" id="ta" />
     </div>
     <div class="sendButton" @click="sendData">Absenden</div>
   </div>
@@ -10,15 +10,22 @@
 
 <script>
 export default {
+  data() {
+    return {
+      textquestion: "",
+      textanswer: ""
+    };
+  },
+
   methods: {
     sendData() {
-      const newTodo = {
-        id: 12312,
-        title: "test"
+      const textcard = {
+        textquestion: this.textquestion,
+        textanswer: this.textanswer
       };
       /* eslint-disable no-console */
       console.log("working");
-      this.$emit("add-card", newTodo);
+      this.$emit("add-card", textcard);
     }
   }
 };

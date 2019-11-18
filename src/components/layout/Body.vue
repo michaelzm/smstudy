@@ -12,21 +12,12 @@ export default {
     TextInput
   },
   methods: {
-    onAddCard(sendData) {
-      const { question, answer } = card[0];
-      axios
-        .post("http://localhost:3000/card", {
-          question: question,
-          answer: answer
-        })
-        .catch(err => console.log(err));
+    addCard(newCard) {
       /* eslint-disable no-console */
-      console.log("adding card" + card);
-    },
-    addCard(newTodo) {
+      console.log(newCard);
       axios.post("http://localhost:3000/card", {
-        question: "123321312",
-        answer: "52521421412"
+        question: newCard.textquestion,
+        answer: newCard.textanswer
       });
     }
   }
