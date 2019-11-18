@@ -1,24 +1,6 @@
 # smstudy
+This is a small project of mine which aims at implementing an improved version of the sm2 algorithm to select the next card to display for the user.
 
-## Project setup
-```
-npm install
-```
+sm 2 is pretty much what every card based learning app is using (with their own adjustments)
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+for the backend im using express w mongodb
