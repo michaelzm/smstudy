@@ -24,7 +24,7 @@ export default {
 <style>
 #createCard {
   display: grid;
-  grid-template-rows: 5vh 80vh 15vh;
+  grid-template-rows: 5vh 80vh 5vh;
   grid-template-columns: 50% 50%;
   grid-template-areas: "header header" "body body" "footer footer";
   font-family: "Avenir", Helvetica, Arial, sans-serif;
@@ -32,21 +32,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-body {
-  margin: 0;
-}
-#nav a.router-link-exact-active {
-  color: #42b983;
 }
 </style>

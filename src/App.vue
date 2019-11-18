@@ -18,8 +18,12 @@
 }
 
 #nav {
-  padding: 30px;
+  height: 10vh;
   background-color: pink;
+}
+
+body {
+  margin: 0;
 }
 
 #nav a {
