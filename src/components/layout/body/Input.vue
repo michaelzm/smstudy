@@ -1,8 +1,22 @@
 <template>
   <div class="textField">
     <div class="informations">
-      <textarea v-model="textquestion" placeholder="Frage" name="textQuestion" id="tq" />
-      <textarea v-model="textanswer" placeholder="Antwort" name="textQuestion" id="ta" />
+      <textarea
+        ref="textareaQuestion"
+        v-model="textquestion"
+        placeholder="Frage"
+        name="textQuestion"
+        id="tq"
+      />
+      <textarea
+        v-model="textanswer"
+        placeholder="Antwort"
+        name="textQuestion"
+        id="ta"
+        @keydown.enter.exact.prevent
+        @keyup.enter.exact="sendData"
+        @keydown.enter.shift.exact
+      />
     </div>
     <div class="sendButton" @click="sendData">Absenden</div>
   </div>
@@ -26,6 +40,15 @@ export default {
       /* eslint-disable no-console */
       console.log("working");
       this.$emit("add-card", textcard);
+      this.clearData();
+      this.resetFocus();
+    },
+    clearData() {
+      this.textquestion = "";
+      this.textanswer = "";
+    },
+    resetFocus() {
+      this.$refs.textareaQuestion.focus();
     }
   }
 };
