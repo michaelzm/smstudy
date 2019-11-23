@@ -23,7 +23,7 @@ export default {
 <style>
 #createCard {
   display: grid;
-  grid-template-rows: 5vh 90vh;
+  grid-template-rows: 3vh 92vh;
   grid-template-columns: 50% 50%;
   grid-template-areas: "header header" "body body";
   font-family: "Avenir", Helvetica, Arial, sans-serif;

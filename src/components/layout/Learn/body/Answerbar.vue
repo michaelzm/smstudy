@@ -2,12 +2,12 @@
   <div class="answerbar">
     <div class="showAnswer" v-if="!answer_is_visible" @click="showAnswer">Antwort zeigen</div>
     <div class="numeric-answer-buttons" v-if="answer_is_visible">
-      <div class="answerbutton answer-0" data-value="0" @click="evaluateAnswer($event)">😖</div>
-      <div class="answerbutton answer-1" data-value="1" @click="evaluateAnswer($event)">😞</div>
-      <div class="answerbutton answer-2" data-value="2" @click="evaluateAnswer($event)">😐</div>
-      <div class="answerbutton answer-3" data-value="3" @click="evaluateAnswer($event)">🙂</div>
-      <div class="answerbutton answer-4" data-value="4" @click="evaluateAnswer($event)">😁</div>
-      <div class="answerbutton answer-5" data-value="5" @click="evaluateAnswer($event)">🔥</div>
+      <div class="answerbutton answer-0" data-value="0.0" @click="evaluateAnswer($event)">😖</div>
+      <div class="answerbutton answer-1" data-value="0.2" @click="evaluateAnswer($event)">😞</div>
+      <div class="answerbutton answer-2" data-value="0.4" @click="evaluateAnswer($event)">😐</div>
+      <div class="answerbutton answer-3" data-value="0.6" @click="evaluateAnswer($event)">🙂</div>
+      <div class="answerbutton answer-4" data-value="0.8" @click="evaluateAnswer($event)">😁</div>
+      <div class="answerbutton answer-5" data-value="1.0" @click="evaluateAnswer($event)">🔥</div>
     </div>
   </div>
 </template>

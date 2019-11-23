@@ -13,12 +13,15 @@ export default {
   },
   methods: {
     addCard(newCard) {
+      console.log("adding new card");
+      var date = new Date().getTime();
+      console.log(date);
       /* eslint-disable no-console */
       console.log(newCard);
       axios.post("http://localhost:3000/collection", {
         question: newCard.textquestion,
         answer: newCard.textanswer,
-        next_review_date: Date.now()
+        calculation_last_reviewed_date: date
       });
     }
   }

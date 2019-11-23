@@ -1,5 +1,5 @@
 <template>
-  <div class="header">Header</div>
+  <div class="header">Bitte Frage und Antwort eingeben:</div>
 </template>
 
 <script>
