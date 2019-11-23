@@ -7,12 +7,12 @@
 </template>
 
 <script>
-import Header from "../components/layout/Header";
-import Body from "../components/layout/Body";
-import Footer from "../components/layout/Footer";
+import Header from "../components/layout/Create/Header";
+import Body from "../components/layout/Create/Body";
+import Footer from "../components/layout/Create/Footer";
 
 export default {
-  name: "about",
+  name: "create",
   components: {
     Header,
     Body,

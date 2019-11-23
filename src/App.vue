@@ -1,8 +1,9 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Learn</router-link> |
-      <router-link to="/about">Create</router-link>
+      <router-link to="/">Learn</router-link>
+
+      <router-link to="/create">Create</router-link>
     </div>
     <router-view />
   </div>
@@ -18,7 +19,7 @@
 }
 
 #nav {
-  height: 10vh;
+  height: 5vh;
   background-color: pink;
 }
 
