@@ -55,8 +55,23 @@ export default {
 </script>
 
 <style scoped>
+@media only screen and (min-width: 300px) and (max-width: 1200px) {
+  .informations {
+    grid-template-columns: 98vw;
+    grid-template-rows: 50% 50%;
+    grid-template-areas: "tq" "ta";
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .informations {
+    grid-template-columns: 48vw 48vw;
+    grid-template-rows: 100%;
+    grid-template-areas: "tq ta";
+  }
+}
 .informations {
   height: 100%;
+  display: grid;
 }
 .sendButton {
   color: red;
@@ -69,18 +84,20 @@ export default {
   height: 90%;
 }
 #tq {
-  margin: 5% 0 0 0%;
-  height: 70%;
-  width: 40vw;
+  grid-area: tq;
+
+  height: 90%;
+  width: 100%;
   overflow-x: hidden;
   resize: none;
   background-color: lime;
 }
 #ta {
+  grid-area: ta;
   background-color: antiquewhite;
-  margin: 5% 0 0 0%;
-  height: 70%;
-  width: 40vw;
+
+  height: 90%;
+  width: 100%;
   overflow-x: hidden;
   resize: none;
 }

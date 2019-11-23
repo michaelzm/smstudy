@@ -1,12 +1,13 @@
 <template>
   <div class="answerbar">
-    <div class="showAnswer" v-if="!answer_visible" @click="showAnswer">Antwort zeigen</div>
-    <div class="numeric-answer-buttons" v-if="answer_visible">
+    <div class="showAnswer" v-if="!answer_is_visible" @click="showAnswer">Antwort zeigen</div>
+    <div class="numeric-answer-buttons" v-if="answer_is_visible">
       <div class="answerbutton answer-0" data-value="0" @click="evaluateAnswer($event)">😖</div>
       <div class="answerbutton answer-1" data-value="1" @click="evaluateAnswer($event)">😞</div>
       <div class="answerbutton answer-2" data-value="2" @click="evaluateAnswer($event)">😐</div>
       <div class="answerbutton answer-3" data-value="3" @click="evaluateAnswer($event)">🙂</div>
-      <div class="answerbutton answer-4" data-value="4" @click="evaluateAnswer($event)">🔥</div>
+      <div class="answerbutton answer-4" data-value="4" @click="evaluateAnswer($event)">😁</div>
+      <div class="answerbutton answer-5" data-value="5" @click="evaluateAnswer($event)">🔥</div>
     </div>
   </div>
 </template>
@@ -14,21 +15,19 @@
 export default {
   data() {
     return {
-      answer_visible: false,
       answer_sent: false
     };
   },
+  props: ["answer_is_visible"],
   methods: {
     showAnswer() {
       this.answer_visible = true;
       this.$emit("show-answer");
     },
     evaluateAnswer(e) {
-      if (!this.answer_sent) {
-        console.log(e.target.dataset.value + " sent");
-        this.$emit("evaluate-answer", e.target.dataset.value);
-        this.answer_sent = true;
-      }
+      console.log(e.target.dataset.value + " sent");
+      this.$emit("evaluate-answer", e.target.dataset.value);
+      this.answer_sent = true;
     }
   }
 };

@@ -2,7 +2,6 @@
   <div id="createCard">
     <Header />
     <Body />
-    <Footer />
   </div>
 </template>
 
@@ -24,9 +23,9 @@ export default {
 <style>
 #createCard {
   display: grid;
-  grid-template-rows: 5vh 80vh 5vh;
+  grid-template-rows: 5vh 90vh;
   grid-template-columns: 50% 50%;
-  grid-template-areas: "header header" "body body" "footer footer";
+  grid-template-areas: "header header" "body body";
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

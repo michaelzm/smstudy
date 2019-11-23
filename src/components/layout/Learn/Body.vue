@@ -1,8 +1,18 @@
 <template>
   <div class="body-learn">
     <Cardinfo></Cardinfo>
-    <Cardfield v-if="finishedLoading" v-bind:answerVisible="answerVisible" v-bind:card="cards[0]"></Cardfield>
-    <Answerbar @show-answer="setAnswerVisible" @evaluate-answer="updateCard"></Answerbar>
+    <Cardfield
+      v-if="finishedLoading"
+      v-bind:answerVisible="answerVisible"
+      v-bind:card="cardInReview"
+    ></Cardfield>
+    <div class="empty" v-if="!finishedLoading">Keine Karten vorhanden.</div>
+    <Answerbar
+      v-bind:answer_is_visible="answerVisible"
+      v-if="finishedLoading"
+      @show-answer="setAnswerVisible"
+      @evaluate-answer="updateCard"
+    ></Answerbar>
   </div>
 </template>
 
@@ -16,7 +26,9 @@ export default {
     return {
       cards: [],
       finishedLoading: false,
-      answerVisible: false
+      answerVisible: false,
+      cardInReview: "",
+      reviewCounter: 0
     };
   },
   components: {
@@ -34,7 +46,10 @@ export default {
           // handle success
           console.log(response.data);
           self.cards = response.data;
-          self.finishedLoading = true;
+          if (response.data.length > 0) {
+            self.finishedLoading = true;
+            self.setCardInReview();
+          }
         })
         .catch(function(error) {
           // handle error
@@ -45,12 +60,20 @@ export default {
           // always executed
         });
     },
+    setCardInReview() {
+      if (this.cards[this.reviewCounter]) {
+        this.cardInReview = this.cards[this.reviewCounter];
+      } else {
+        this.finishedLoading = false;
+      }
+    },
     setAnswerVisible() {
       console.log("Setting answer visible");
       this.answerVisible = true;
     },
     updateCard() {
-      var newDate = Date.now() + 60 * 100;
+      this.reviewCounter++;
+      var newDate = Date.now() + 86400;
       console.log(newDate);
       console.log("updating card");
       axios
@@ -62,6 +85,8 @@ export default {
           console.log(res);
         })
         .catch(err => console.log(err.response.data));
+      this.answerVisible = false;
+      this.setCardInReview();
     }
   },
   created() {
@@ -73,7 +98,7 @@ export default {
 <style scoped>
 .body-learn {
   background-color: blue;
-  height: 90vh;
+  height: 95vh;
   grid-area: body;
 }
 </style>
