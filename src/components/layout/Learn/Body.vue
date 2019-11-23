@@ -66,13 +66,13 @@ export default {
         });
     },
     setCardInReview() {
-      /*  if (this.cards[this.reviewCounter]) {
+       if (this.cards[this.reviewCounter]) {
         this.cardInReview = this.cards[this.reviewCounter];
       } else {
         this.finishedLoading = false;
-      } */
-      var count = this.cards.length;
-      this.cardInReview = this.cards[count - 1];
+      }
+      /* var count = this.cards.length;
+      this.cardInReview = this.cards[count - 1]; */
     },
     setAnswerVisible() {
       console.log("Setting answer visible");
