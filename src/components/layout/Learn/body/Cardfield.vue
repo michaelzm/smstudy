@@ -42,6 +42,8 @@ export default {
 <style scoped>
 .card-to-learn {
   height: 80%;
+  display: flex;
+  justify-content: center;
 }
 .textfield {
   align-self: flex-start;

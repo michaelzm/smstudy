@@ -48,10 +48,14 @@ export default {
   background-color: red;
 }
 .answerbutton {
-  margin-left: 5vw;
-  margin-right: 5vw;
+  margin-left: 3vw;
+  margin-right: 3vw;
   height: 5vh;
   width: 10vw;
   background-color: greenyellow;
+}
+.answerbar {
+  display: flex;
+  justify-content: center;
 }
 </style>
